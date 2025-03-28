@@ -1,0 +1,64 @@
+/* Apply background image to the whole app */
+body {
+  background-image: url('/public/images/background.jpg');
+  /* Path to your background image */
+  background-size: cover;
+  /* Ensure it covers the entire page */
+  background-position: center;
+  /* Center the background image */
+  background-attachment: fixed;
+  /* Make the background fixed while scrolling */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.game-container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin-top: 20px;
+  position: relative;
+  /* Make sure the content overlays correctly */
+  z-index: 1;
+  /* Make sure the game appears on top of the background */
+}
+
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.bunny {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(219, 173, 173);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-size: cover;
+  background-position: center;
+}
+
+.bunny.visible {
+  background-image: url('/public/images/bunny.png');
+  /* Path to bunny image */
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+h2 {
+  color: red;
+}
